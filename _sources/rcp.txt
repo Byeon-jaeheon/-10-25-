@@ -1,0 +1,81 @@
+
+""" # raw-form
+가위바위보 프로그램
+"""
+# import os
+
+import random
+""" # Italics
+c_list = 가위바위보 리스트 game=경기횟수w_count = 이긴횟수 l_count = 진횟수 d_count = 비긴횟수 초기에 0으로 설정
+"""
+game = 0
+w_count = 0
+l_count = 0
+d_count = 0
+c_list = ['바위', '가위', '보']
+""" # Bold
+10번 반복 하기 위한 while문
+"""
+"""==========================
+			반복문
+	==========================
+"""
+while True :
+	"""# Bold
+	10번 반복시 while문 탈출
+	"""
+	if game == 10 :
+		break
+	else :
+		""" # Bold
+		컴퓨터가 내는 값 설정"""
+		i = random.randrange(1,4)
+		""" # Bold
+		플레이어가 내는 값 설정"""
+		player = int(input("무엇을 내겟습니까?(1:바위 2:가위 3:보)"))
+		""" # Italics
+		경기 승패 판단(컴퓨터vs나)"""
+		if(player == i):
+			print("coumputer : ",c_list[i-1])
+			print("draw")
+			d_count	+= 1
+			game+=1
+		if(player==1 and i == 2) :
+			print("coumputer : ",c_list[i-1])
+			print("win")
+			w_count	+= 1
+			game+=1
+		if(player==1 and i == 3) :
+			print("coumputer : ",c_list[i-1])	
+			l_count	+= 1
+			game+=1	
+			print("lose")
+		if(player==2 and i == 1) :
+			print("coumputer : ",c_list[i-1])
+			l_count += 1
+			game+=1
+			print("lose")
+		if(player==2 and i == 3) :
+			print("coumputer : ",c_list[i-1])
+			print("win")
+			w_count	+= 1
+			game += 1
+		if(player==3 and i == 1) :
+			print("coumputer : ",c_list[i-1])
+			print("win")
+			w_count	+= 1
+			game+=1
+		if(player==3 and i == 2) :
+			print("coumputer : ",c_list[i-1]) 
+			print("lose")
+			l_count	+= 1
+			game+=1
+""" --------------
+		최종 
+	--------------
+"""
+"""최종적으로 나온 비긴횟수 이긴횟수 진횟수 결과 출력"""		
+print("draw :",d_count)
+print("win :",w_count)
+print("lose :",l_count)
+
